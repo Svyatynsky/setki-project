@@ -6,8 +6,8 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220710165735">
-	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css?_v=20220710165735" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220710184754">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css?_v=20220710184754" rel="stylesheet">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -20,19 +20,20 @@
 				<div class="header__menu menu">
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__point"><a href="#" class="menu__link">Главная</a></li>
-							<li class="menu__point"><a href="#" class="menu__link">Возможности</a></li>
-							<li class="menu__point"><a href="#" class="menu__link">Преимущества</a></li>
-							<li class="menu__point"><a href="#" class="menu__link">Контакты</a></li>
+							<li data-goto=".firstscreen" class="menu__point"><a href="#" class="menu__link">Главная</a></li>
+							<li data-goto=".capabilities" class="menu__point"><a href="#" class="menu__link">Возможности</a></li>
+							<li data-goto=".benefits" class="menu__point"><a href="#" class="menu__link menu__link_bold">Преимущества</a></li>
+							<li data-goto=".contacts" class="menu__point"><a href="#" class="menu__link">Контакты</a></li>
 						</ul>
 					</nav>
 				</div>
-				<a href="#" class="header__login">Авторизация</a>
+				<a data-da=".menu__body, 479.98, last" href="#" class="header__login">Авторизация</a>
 				<button type="button" class="menu__icon icon-menu">
 					<span></span>
 				</button>
 			</div>
 		</header>
+
 		<main class="page">
 			<div class="firstscreen">
 				<div class="firstscreen__container">
@@ -42,7 +43,7 @@
 							<p>
 								Система позволяет расчитывать стоимость москитных систем и автоматизировать работу с клиентами онлайн в любое время
 							</p>
-							<div class="firstscreen__arrow"><img src="img/icons/arrow.svg" alt=""></div>
+							<div data-goto=".join" class="firstscreen__arrow"><img src="img/icons/arrow.svg" alt=""></div>
 						</div>
 						<div class="firstscreen__image"><picture><source srcset="img/home/computers.webp" type="image/webp"><img src="img/home/computers.png" alt=""></picture></div>
 					</div>
@@ -51,7 +52,7 @@
 						<div class="form__actions">
 							<div class="form__input"><input type="text" placeholder="Имя"></div>
 							<div class="form__input"><input data-error="Ошибка" data-validate data-required="email" type="text" placeholder="Эл. Почта"></div>
-							<div class="form__input phone"><input type="text" placeholder="Телефон"></div>
+							<div class="form__input"><input class="phone" type="text" placeholder="Телефон"></div>
 							<button class="form__button">Отправить</button>
 						</div>
 					</form>
@@ -62,7 +63,6 @@
 				<div class="capabilities__container">
 					<div class="capabilities__title title">Возможности</div>
 					<div class="capabilities__content">
-
 						<ul class="capabilities__list capabilities__list_1">
 							<li class="capabilities__point">
 								<span>Доступ с любого</span>
@@ -81,8 +81,10 @@
 								<span>каждой категории</span>
 							</li>
 						</ul>
-						<div class="capabilities__image"><picture><source srcset="img/home/capabilities/capabilities-phone.webp" type="image/webp"><img src="img/home/capabilities/capabilities-phone.png" alt=""></picture></div>
+
+						<div data-da=".capabilities__container, 768, 1" class="capabilities__image"><picture><source srcset="img/home/capabilities/capabilities-phone.webp" type="image/webp"><img src="img/home/capabilities/capabilities-phone.png" alt=""></picture></div>
 						<ul class="capabilities__list capabilities__list_2">
+
 							<li class="capabilities__point">
 								<span>Систематизация</span>
 								<span>работы с клиентами</span>
@@ -185,15 +187,17 @@
 							<a href="mailto:mail@setki.pro" class="contacts-info__mail contacts-info__item">
 								<span>mail@setki.pro</span>
 							</a>
-							<div class="contacts-info__address contacts-info__item">Воронеж, ул. Димитрова, 112Д</div>
+							<a target="_blank" href="https://yandex.ru/maps/?um=constructor%3Aa1e79a68a6545b4d22c0ec6ab272b3518e62e4b8a183351cc3bb3f9d05d88784&source=constructorLink" class="contacts-info__address contacts-info__item">Воронеж, ул. Димитрова, 112Д</a>
 						</div>
-						<div class="contacts__map"><picture><source srcset="img/home/contacts/map.webp" type="image/webp"><img src="img/home/contacts/map.png" alt=""></picture></div>
+						<div class="contacts__map">
+							<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa1e79a68a6545b4d22c0ec6ab272b3518e62e4b8a183351cc3bb3f9d05d88784&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+						</div>
 					</div>
 				</div>
 			</div>
 
 
-			<div class="join">
+			<div class="join" id="join">
 				<div class="join__container">
 					<div class="join__title">Автоматизируйте процесс производства и продажи москитных систем</div>
 					<form action="#" class="join__form form">
@@ -201,15 +205,13 @@
 						<div class="form__actions">
 							<div class="form__input"><input type="text" placeholder="Имя"></div>
 							<div class="form__input"><input data-error="Ошибка" data-validate data-required="email" type="text" placeholder="Эл. Почта"></div>
-							<div class="form__input phone"><input type="text" placeholder="Телефон"></div>
+							<div class="form__input phone"><input class="phone" type="text" placeholder="Телефон"></div>
 							<button class="form__button">Отправить</button>
 						</div>
 					</form>
 					<div class="join__image"><picture><source srcset="img/home/join/join-image.webp" type="image/webp"><img src="img/home/join/join-image.png" alt=""></picture></div>
 				</div>
 			</div>
-
-
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
@@ -217,8 +219,8 @@
 			</div>
 		</footer>
 	</div>
-	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js?_v=20220710165735"></script>
-	<script src="js/app.min.js?_v=20220710165735"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js?_v=20220710184754"></script>
+	<script src="js/app.min.js?_v=20220710184754"></script>
 	<script>
 		AOS.init();
 	</script>
